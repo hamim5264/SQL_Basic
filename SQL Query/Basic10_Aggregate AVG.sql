@@ -1,0 +1,22 @@
+CREATE DATABASE Aggreration_AVG;
+USE Aggreration_AVG;
+
+CREATE TABLE Info(
+City VARCHAR(50),
+Id INT NOT NULL,
+Marks FLOAT,
+PRIMARY KEY(id)
+);
+
+INSERT INTO Info
+(City,Id,Marks)
+VALUES
+("RANGPUR",21,70.5),   
+("DHAKA",22,90),  
+("DHAKA",23,85),   
+("RANGPUR",24,40), 
+("DHAKA",25,90);
+
+SELECT *FROM Info;
+SELECT City, AVG(Marks) FROM Info GROUP BY City ORDER BY AVG(Marks) ASC;
+SELECT City, AVG(Marks) FROM Info GROUP BY City ORDER BY City ASC;
